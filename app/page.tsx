@@ -9,8 +9,7 @@ export default function Home() {
 
       <Header />
 
-      <main className="w-full py-10 px-4">
-  {/* Page Header */}
+<main className="w-full py-10 px-4">
   <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto px-4">
     <div>
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-black text-center px-6 md:px-8 py-4 md:py-6 mb-8">
