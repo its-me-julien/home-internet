@@ -35,17 +35,26 @@ const getIpAddress = (event) => {
 
 const isThrottled = async (ip) => {
   try {
-    const primaryIp = ip.split(',')[0].trim();
-    const now = Date.now();
-    const oneDayAgo = new Date(now - 24 * 60 * 60 * 1000).toISOString();
+    const ipDocRef = db.collection("ip_logs").doc(ip);
+    const ipDoc = await ipDocRef.get();
 
-    const submissions = await db.collection("ip_logs")
-      .where("ip", "==", primaryIp)
-      .where("timestamp", ">=", oneDayAgo)
-      .get();
+    if (ipDoc.exists) {
+      const { submissionCount = 0, lastSubmission } = ipDoc.data();
+      const now = Date.now();
 
-    console.log(`IP ${primaryIp} has made ${submissions.size} submissions in the last 24 hours.`);
-    return submissions.size >= 5; // Limit of 5 submissions per day
+      // Check if last submission was within the same day
+      const startOfToday = new Date();
+      startOfToday.setHours(0, 0, 0, 0);
+
+      if (lastSubmission && lastSubmission.toMillis() > startOfToday.getTime()) {
+        if (submissionCount >= 5) {
+          console.log(`IP ${ip} throttled. Submission count: ${submissionCount}`);
+          return true;
+        }
+      }
+    }
+
+    return false;
   } catch (error) {
     console.error("Error checking throttling:", error);
     return false; // Allow submissions if throttling check fails
@@ -54,14 +63,40 @@ const isThrottled = async (ip) => {
 
 const logSubmission = async (ip) => {
   try {
-    const primaryIp = ip.split(',')[0].trim();
-    await db.collection("ip_logs").add({
-      ip: primaryIp,
-      timestamp: new Date().toISOString(),
-    });
-    console.log(`Logged submission for IP: ${primaryIp}`);
+    const ipDocRef = db.collection("ip_logs").doc(ip);
+    const ipDoc = await ipDocRef.get();
+    const now = admin.firestore.Timestamp.now();
+
+    if (ipDoc.exists) {
+      const { submissionCount = 0, lastSubmission } = ipDoc.data();
+      const startOfToday = new Date();
+      startOfToday.setHours(0, 0, 0, 0);
+
+      if (lastSubmission && lastSubmission.toMillis() > startOfToday.getTime()) {
+        // Increment submission count
+        await ipDocRef.update({
+          submissionCount: admin.firestore.FieldValue.increment(1),
+          lastSubmission: now,
+        });
+      } else {
+        // Reset count for a new day
+        await ipDocRef.set({
+          submissionCount: 1,
+          lastSubmission: now,
+        });
+      }
+    } else {
+      // New IP, start logging
+      await ipDocRef.set({
+        submissionCount: 1,
+        lastSubmission: now,
+      });
+    }
+
+    console.log(`Logged submission for IP: ${ip}`);
   } catch (error) {
     console.error("Error logging submission:", error);
+    throw new Error("Submission logging failed"); // Prevent submission if logging fails
   }
 };
 
@@ -89,8 +124,8 @@ exports.handler = async (event) => {
       return {
         statusCode: 429, // Too Many Requests
         body: JSON.stringify({
-          error: "Rate limit exceeded. Please try again later.",
-          message: "You have reached the daily limit of 5 submissions from this IP address. Please try again tomorrow.",
+          error: "Rate limit exceeded. Please try again tomorrow.",
+          message: "You have reached the daily limit of 5 submissions from this IP address.",
         }),
       };
     }
