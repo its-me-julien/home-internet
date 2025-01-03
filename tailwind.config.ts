@@ -1,18 +1,30 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
-export default {
+const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        sans: ['var(--font-aeonik-regular)', 'sans-serif'], // Default sans for regular text
+        'aeonik-bold': ['var(--font-aeonik-bold)', 'sans-serif'], // Bold weight
+        'aeonik-bold-italic': ['var(--font-aeonik-bold-italic)', 'sans-serif'], // Bold italic
+        'aeonik-light': ['var(--font-aeonik-light)', 'sans-serif'], // Light weight
+        'aeonik-light-italic': ['var(--font-aeonik-light-italic)', 'sans-serif'], // Light italic
+        'aeonik-regular': ['var(--font-aeonik-regular)', 'sans-serif'], // Regular weight
+        'aeonik-regular-italic': ['var(--font-aeonik-regular-italic)', 'sans-serif'], // Regular italic
       },
     },
   },
-  plugins: [],
-} satisfies Config;
+  plugins: [
+    require('@tailwindcss/container-queries'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('daisyui')
+  ],
+};
+
+export default config;
