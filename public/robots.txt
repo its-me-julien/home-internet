@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://mobile.worldmobile.club
+Host: https://internet.worldmobile.club
 
 # Sitemaps
-Sitemap: https://mobile.worldmobile.club/sitemap.xml
+Sitemap: https://internet.worldmobile.club/sitemap.xml
