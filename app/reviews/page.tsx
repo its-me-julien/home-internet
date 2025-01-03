@@ -29,7 +29,7 @@ const MobilePlanReviewsPage = () => {
         const response = await fetch("/.netlify/functions/getReviewSummary", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ collection: "mobileplan_review" }),
+          body: JSON.stringify({ collection: "broadband_review" }),
         });
 
         const data = await response.json();
@@ -71,21 +71,21 @@ const MobilePlanReviewsPage = () => {
         <div className="container mx-auto space-y-16">
           {/* Page Header */}
           <header className="text-center max-w-3xl mx-auto px-4 space-y-6">
-            <h1
-              id="world-mobile-reviews-header"
-              className="text-5xl font-aeonik-bold text-black leading-tight"
-            >
-              Real Reviews from{" "}
-              <span className="text-transparent bg-gradient-to-r from-[#F6642D] via-[#D42E58] to-[#5A2FBA] bg-clip-text">
-                World Mobile Phone Plans
-              </span>{" "}
-              Customers
-            </h1>
-            <p className="text-lg text-gray-600">
-              Considering a World Mobile phone plan? Read real customer reviews to understand the 
-              value, speed, and reliability of these plans before you make a decision.
-            </p>
-          </header>
+  <h1
+    id="home-internet-reviews-header"
+    className="text-5xl font-aeonik-bold text-black leading-tight"
+  >
+    Real Reviews from{" "}
+    <span className="text-transparent bg-gradient-to-r from-[#F6642D] via-[#D42E58] to-[#5A2FBA] bg-clip-text">
+      World Mobile Home Internet
+    </span>{" "}
+    Customers
+  </h1>
+  <p className="text-lg text-gray-600">
+    Thinking about upgrading to a new home internet provider? Read real customer reviews to explore the speed, reliability, and value of these services before you make a decision.
+  </p>
+</header>
+
 
           {/* Review Summary */}
           <section id="review-summary" aria-labelledby="review-summary-title">
