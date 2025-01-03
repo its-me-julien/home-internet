@@ -17,7 +17,7 @@ const MobilePlanReviewsPage = () => {
       overall: 5,
       service: 5,
       pricing: 5,
-      speed: 5, // Updated to include "speed" instead of "features"
+      speed: 5,
     },
   });
   const [loadingSummary, setLoadingSummary] = useState(true);
@@ -33,7 +33,6 @@ const MobilePlanReviewsPage = () => {
         });
 
         const data = await response.json();
-        console.log("API Response:", data); // Debugging log
         if (response.ok) {
           setSummaryData({
             totalReviews: data.totalReviews ?? 0,

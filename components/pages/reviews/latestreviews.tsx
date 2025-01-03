@@ -249,6 +249,8 @@ const Reviews: React.FC = () => {
               review.feedback
             )}
           </blockquote>
+
+
         
           {/* Ratings Breakdown */}
           <div className="mt-6 flex space-x-4 text-sm">
@@ -276,6 +278,17 @@ const Reviews: React.FC = () => {
         
         ))}
 
+{reviews.length < aggregatedData.totalReviews && (
+  <div className="text-center mt-6">
+    <button
+      onClick={() => fetchReviews(reviews.length, reviewsPerBatch)}
+      className="px-6 py-3 bg-[#F6642D] text-white font-bold rounded-lg hover:bg-[#e55c2c] transition-colors duration-300"
+      disabled={loading}
+    >
+      {loading ? "Loading..." : "Show More Reviews"}
+    </button>
+  </div>
+)}
       {loading && (
         <p className="text-center text-lg font-medium text-gray-700 animate-pulse">
           Loading more reviews...
