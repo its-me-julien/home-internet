@@ -69,7 +69,7 @@ const MobilePlanReviewsPage = () => {
       <main className="flex-grow w-full py-12 px-4">
         <div className="container mx-auto space-y-16">
           {/* Page Header */}
-          <header className="text-center max-w-5xl mx-auto px-4 py-12 md:py-14 space-y-6">
+          <header className="text-center max-w-5xl mx-auto px-4 md:py-14 space-y-6">
   <h1
     id="home-internet-reviews-header"
     className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-black px-6 md:px-8 py-4 md:py-6 mb-8"
