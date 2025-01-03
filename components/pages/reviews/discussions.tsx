@@ -8,14 +8,14 @@ const JoinDiscussion: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Join the World Mobile Community",
-    description: "Join the World Mobile Club community to discuss mobile phone plans, share reviews, connect with other customers, and stay informed about the latest developments.",
+    description: "Join the World Mobile Club community to share your experience, review World Mobile, connect with other customers, and stay informed about the latest developments.",
     mainEntity: [
       {
         "@type": "DiscussionForumPosting",
-        name: "Mobile Plan Reviews",
-        headline: "Share and read genuine reviews of World Mobile phone plans",
-        url: "https://worldmobile.club/c/mobile-phone-plans/customer-reviews/123",
-        description: "Explore authentic reviews about World Mobile phone plans. Learn from customer experiences to make informed decisions.",
+        name: "The Club Testimonials",
+        headline: "Share and read genuine World Mobile customer reviews",
+        url: "https://worldmobile.club/c/world-mobile-customers/world-mobile-customer-reviews/68",
+        description: "Explore authentic testimonials about World Mobile services. Learn from customer experiences to make informed decisions.",
         author: {
           "@type": "Person",
           name: "World Mobile Club",
@@ -48,50 +48,50 @@ const JoinDiscussion: React.FC = () => {
       <section className="mt-16 max-w-7xl mx-auto px-4 space-y-16">
         {/* Header Section */}
         <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto px-4 text-center">
-          <h2 className="mb-8 text-4xl font-extrabold text-black">
+          <h2 className="mb-8 text-4xl font-extrabold text-white">
             Engage with the{' '}
             <span className="bg-gradient-to-r from-[#F6642D] via-[#D42E58] to-[#5A2FBA] bg-clip-text text-transparent">
               World Mobile Community
             </span>
           </h2>
-          <p className="mb-6 leading-relaxed text-lg text-gray-600">
-            Join the World Mobile Club community to share your experience with mobile phone plans, connect with other customers, and stay informed about the latest offerings and updates.
+          <p className="mb-6 leading-relaxed text-lg text-gray-300">
+            Join the World Mobile Club community to share your experience, review World Mobile, connect with other customers, and stay informed about the latest developments.
           </p>
         </div>
 
         {/* Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Card 1: Mobile Plan Reviews */}
-          <div className="card bg-white text-neutral-content rounded-lg shadow-lg border border-gray-200 hover:scale-105 transition-transform">
+          {/* Card 1: The Club Testimonials */}
+          <div className="card bg-[rgba(55,10,81,0.19)] text-neutral-content rounded-lg shadow-lg border border-[rgba(255,255,255,0.1)] hover:scale-105 transition-transform">
             <div className="card-body">
-              <h3 className="card-title text-2xl font-extrabold text-black">
-                Mobile Plan Reviews
+              <h3 className="card-title text-2xl font-extrabold text-white">
+                World Mobile Customer Testimonials
               </h3>
-              <p className="text-gray-600 leading-relaxed mt-4">
-                Explore honest reviews and experiences from customers about World Mobile phone plans.
+              <p className="text-gray-300 leading-relaxed mt-4">
+                Explore genuine reviews and experiences from World Mobile customers.
               </p>
               <div className="mt-6">
                 <a
-                  href="https://worldmobile.club/c/mobile-phone-plans/customer-reviews/123"
+                  href="https://worldmobile.club/c/world-mobile-customers/world-mobile-customer-reviews/68"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Read reviews of World Mobile phone plans"
+                  aria-label="Read more testimonials from the World Mobile community"
                   className="btn bg-gradient-to-r from-[#5A2FBA] to-[#D42E58] text-white hover:brightness-125 border-none px-6 py-3 rounded-full"
                 >
-                  Read Reviews
+                  Read Testimonials
                 </a>
               </div>
             </div>
           </div>
 
           {/* Card 2: Visit the Club */}
-          <div className="card bg-white text-neutral-content rounded-lg shadow-lg border border-gray-200 hover:scale-105 transition-transform">
+          <div className="card bg-[rgba(55,10,81,0.19)] text-neutral-content rounded-lg shadow-lg border border-[rgba(255,255,255,0.1)] hover:scale-105 transition-transform">
             <div className="card-body">
-              <h3 className="card-title text-2xl font-extrabold text-black">
+              <h3 className="card-title text-2xl font-extrabold text-white">
                 Visit the Club
               </h3>
-              <p className="text-gray-600 leading-relaxed mt-4">
-                Join discussions about World Mobile phone plans, celebrate milestones, and connect with the community.
+              <p className="text-gray-300 leading-relaxed mt-4">
+                The hub for World Mobile customers. Stay updated, share milestones, and connect.
               </p>
               <div className="mt-6">
                 <a

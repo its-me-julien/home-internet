@@ -3,14 +3,14 @@ import React from "react";
 const MetaFields = () => {
   return (
     <>
-      <title>World Mobile Phone Plan Reviews | World Mobile Club</title>
+      <title>World Mobile Broadband Customer Reviews | World Mobile Club</title>
       <meta 
         name="description" 
-        content="Discover real customer reviews of World Mobile Phone Plans. Learn about reliability, speed, pricing, and service to make the best choice for your mobile plan." 
+        content="Explore real customer reviews about World Mobile Broadband. Discover insights on reliability, speed, pricing, and overall service to make informed decisions." 
       />
       <meta 
         name="keywords" 
-        content="World Mobile Reviews, Mobile Phone Plan Feedback, Mobile Plan Ratings, Phone Plan Reliability, Plan Speed, Pricing Reviews, Mobile Service Feedback" 
+        content="World Mobile Reviews, Broadband Customer Feedback, Internet Provider Ratings, Broadband Reliability, Broadband Speed, Pricing Feedback" 
       />
       <meta name="author" content="World Mobile Club" />
 
@@ -19,15 +19,15 @@ const MetaFields = () => {
       <meta property="og:site_name" content="World Mobile Club" />
       <meta 
         property="og:title" 
-        content="Mobile Phone Plan Reviews | World Mobile Club" 
+        content="Broadband Customer Reviews | World Mobile Club" 
       />
       <meta 
         property="og:description" 
-        content="Discover real customer reviews of World Mobile Phone Plans. Learn about reliability, speed, pricing, and service to make the best choice for your mobile plan." 
+        content="Explore real customer reviews about World Mobile Broadband. Discover insights on reliability, speed, pricing, and overall service to make informed decisions." 
       />
       <meta 
         property="og:url" 
-        content="https://wmtx.worldmobile.club/mobile-phone-plan-reviews/" 
+        content="https://wmtx.worldmobile.club/broadband-customer-reviews/" 
       />
       <meta 
         property="og:image" 
@@ -39,11 +39,11 @@ const MetaFields = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta 
         name="twitter:title" 
-        content="Mobile Phone Plan Reviews | World Mobile Club" 
+        content="Broadband Customer Reviews | World Mobile Club" 
       />
       <meta 
         name="twitter:description" 
-        content="Discover real customer reviews of World Mobile Phone Plans. Learn about reliability, speed, pricing, and service to make the best choice for your mobile plan." 
+        content="Explore real customer reviews about World Mobile Broadband. Discover insights on reliability, speed, pricing, and overall service to make informed decisions." 
       />
       <meta 
         name="twitter:image" 
